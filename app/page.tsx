@@ -1,103 +1,106 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div style={styles.container}>
+      <div style={styles.overlay}></div>
+      <main style={styles.content}>
+        <h1 style={styles.title}>The Light Architect Records</h1>
+        <p style={styles.subtitle}>Cosmic Frequency • Divine Sound • Infinite Light</p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div style={styles.albumSection}>
+          <div style={styles.albumCard}>
+            <img src="https://i.imgur.com/mtj6nGZ.png" style={styles.albumImg} alt="Album 1" />
+            <h3 style={styles.albumTitle}>Sacred Vibes Vol.1</h3>
+            <a href="https://distrokid.com" target="_blank" style={styles.link}>Listen</a>
+          </div>
+
+          <div style={styles.albumCard}>
+            <img src="https://i.imgur.com/x8zO7Vh.png" style={styles.albumImg} alt="Album 2" />
+            <h3 style={styles.albumTitle}>Cinematic Universe</h3>
+            <a href="https://distrokid.com" target="_blank" style={styles.link}>Listen</a>
+          </div>
+
+          <div style={styles.albumCard}>
+            <img src="https://i.imgur.com/m7W7xQK.png" style={styles.albumImg} alt="Album 3" />
+            <h3 style={styles.albumTitle}>Sacred Vibes Vol.3</h3>
+            <a href="https://distrokid.com" target="_blank" style={styles.link}>Listen</a>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      <footer style={styles.footer}>© 2025 The Light Architect Records</footer>
     </div>
   );
 }
+
+const styles = {
+  container: {
+    position: 'relative',
+    minHeight: '100vh',
+    background: 'linear-gradient(135deg, #000814, #001D3D, #003566)',
+    overflow: 'hidden',
+    fontFamily: 'Poppins, sans-serif',
+    color: '#fff',
+    textAlign: 'center',
+  },
+  overlay: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    background: 'radial-gradient(circle at 20% 20%, rgba(255,215,0,0.15), transparent 70%)',
+    animation: 'glow 10s infinite alternate',
+  },
+  content: {
+    position: 'relative',
+    zIndex: 2,
+    paddingTop: '120px',
+  },
+  title: {
+    fontSize: '3rem',
+    fontWeight: 700,
+    letterSpacing: '2px',
+  },
+  subtitle: {
+    fontSize: '1.2rem',
+    color: '#FFD700',
+    marginBottom: '50px',
+  },
+  albumSection: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    gap: '30px',
+    padding: '0 20px',
+  },
+  albumCard: {
+    background: 'rgba(255,255,255,0.08)',
+    borderRadius: '12px',
+    width: '250px',
+    padding: '20px',
+    transition: 'transform 0.3s ease',
+  },
+  albumImg: {
+    width: '100%',
+    borderRadius: '10px',
+  },
+  albumTitle: {
+    marginTop: '15px',
+    color: '#FFD700',
+    fontSize: '1.1rem',
+  },
+  link: {
+    display: 'inline-block',
+    marginTop: '10px',
+    color: '#fff',
+    background: '#FFD700',
+    padding: '8px 16px',
+    borderRadius: '8px',
+    textDecoration: 'none',
+    fontWeight: 'bold',
+  },
+  footer: {
+    position: 'absolute',
+    bottom: '15px',
+    width: '100%',
+    color: '#aaa',
+    fontSize: '0.8rem',
+  },
+};
